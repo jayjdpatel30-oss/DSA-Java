@@ -1,4 +1,4 @@
-package DAY1;
+```java
 
 public class StockProfit {
 
@@ -56,3 +56,4 @@ public class StockProfit {
 	}
 
 }
+```
