@@ -1,4 +1,4 @@
-package DAY1;
+```java
 
 import java.util.Arrays;
 
@@ -85,3 +85,4 @@ public class MoveZeroes {
 	}
 
 }
+```
