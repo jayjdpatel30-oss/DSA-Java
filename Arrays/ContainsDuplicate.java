@@ -1,4 +1,4 @@
-package DAY1;
+```java
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -64,3 +64,4 @@ public class ContainsDuplicate {
 		return false;
 	}
 }
+```
