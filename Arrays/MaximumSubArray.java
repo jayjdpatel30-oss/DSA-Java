@@ -1,4 +1,4 @@
-package DAY1;
+```java
 
 public class MaximumSubArray {
 
@@ -50,3 +50,4 @@ public class MaximumSubArray {
 	}
 
 }
+```
