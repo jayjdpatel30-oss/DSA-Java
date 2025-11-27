@@ -29,8 +29,6 @@ public class FirstUniqueCharacter {
 	 * We use an array of size 26 for lowercase English letters, which is more
 	 * efficient than HashMap for this specific case.
 	 * 
-	 * Alternative: Single pass with LinkedHashMap to maintain order.
-	 * 
 	 * Time Complexity: O(n) - two passes through the string Space Complexity: O(1)
 	 * - array of constant size 26
 	 */
@@ -83,18 +81,5 @@ public class FirstUniqueCharacter {
 		return -1;
 	}
 
-	// using LinkedHashMap
-	public static int firstUniqCharLinkedhm(String s) {
-
-		LinkedHashMap<Character, Integer> linkedHashMap = new LinkedHashMap<>();
-
-		for (int i = 0; i < s.length(); i++) {
-			linkedHashMap.put(s.charAt(i), linkedHashMap.getOrDefault(s.charAt(i), 0) + 1);
-		}
-
-		System.out.println(linkedHashMap);
-		
-		return -1;
-	}
-
 }
+
