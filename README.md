@@ -16,7 +16,7 @@ This repository demonstrates my ability to:
 - **Author:** Jay Patel  
 - **Languages:** Java  
 - **Platform:** LeetCode  
-- **Topics Completed:** Arrays, Strings, HashMap, Two Pointers, Linked List, Binary Search
+- **Topics Completed:** Arrays, Strings, HashMap, Two Pointers, Linked List, Binary Search, Recursion
 - **Status:** Actively Solving (Daily Progress 🚀)
 
 ---
@@ -29,3 +29,5 @@ Each topic has its own folder containing:
 - Edge cases
 - Time & space complexity
 - Clean Java implementation
+
+- [Recursion : ](Recursion/README.md)
