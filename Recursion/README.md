@@ -13,110 +13,221 @@
 
 ## 🎯 Problem Summaries
 
-### 1️⃣ Sum of Digits
-
-**Problem:** Calculate the sum of digits in a number
-**Example:** `1234 → 10`
-
-**Approach:**
-
-```
-sumOfDigits(1234)
-= 4 + sumOfDigits(123)
-= 4 + 3 + sumOfDigits(12)
-= 4 + 3 + 2 + sumOfDigits(1)
-= 4 + 3 + 2 + 1 + sumOfDigits(0)
-= 10
-```
-
-**Key Learning:** Extract parts using `% 10` and `/ 10`.
+> *“How did we come up with the recursion?”*
+> *“Why that base case?”*
+> *“Why this recursive call?”*
 
 ---
 
-### 2️⃣ Power Calculation
+# 1️⃣ Sum of Digits — How We Got the Logic
 
-**Problem:** Compute base^exponent efficiently
-**Example:** `2^10 = 1024`
+### 🔍 **How do we break the problem?**
 
-**Two Approaches:**
+A number is made of **last digit + remaining digits**:
 
-* **Simple:** O(n)
-* **Optimized (Binary Exponentiation):** O(log n)
+Example: `1234`
 
-**Magic of Binary Exponentiation:**
+* Last digit = `4` → `n % 10`
+* Remaining number = `123` → `n / 10`
+
+### 🧠 **Recursive logic idea**
+
+Sum of digits of N =
+➡ last digit + sum of digits of the remaining number
 
 ```
-2^8 = (2^4)² = ((2²)²)² = (((2¹)²)²)²
+sumOfDigits(n) = (n % 10) + sumOfDigits(n / 10)
 ```
 
-Only **3 multiplications** instead of 7.
+### 🛑 **Base case — how did we think of it?**
+
+When the number becomes `0`, there are **no digits left**.
+
+→ So return `0`.
+
+### ✔ Final recursion
+
+```
+sum(n) = n%10 + sum(n/10)
+base: n == 0
+```
 
 ---
 
-### 3️⃣ GCD (Euclidean Algorithm)
+# 2️⃣ Power Calculation — How We Got the Logic
 
-**Example:** `GCD(48, 18) = 6`
+### 🔍 **How do we break the problem?**
 
-**Visualization:**
+`a^b` can be seen as:
 
 ```
-GCD(48, 18)
-→ GCD(18, 12)
-  → GCD(12, 6)
-    → GCD(6, 0)
-      → 6 ✓
+a * a^(b-1)
 ```
 
-**Key Learning:** Elegant divide-and-remainder method.
+So reduce exponent by 1.
+
+### 🧠 **Optimized logic (divide exponent by 2)**
+
+If exponent is even:
+
+```
+a^8 = (a^4) * (a^4)
+```
+
+If exponent is odd:
+
+```
+a^9 = a * (a^8)
+```
+
+So recursive structure:
+
+```
+power(a, b/2)
+```
+
+### 🛑 **Base case**
+
+Any number power 0 is 1 → `a^0 = 1`.
+
+### ✔ Final recursion
+
+```
+if b is even: a^(b/2)^2
+if b is odd : a * a^(b-1)
+base: b == 0
+```
 
 ---
 
-### 4️⃣ Decimal to Binary
+# 3️⃣ GCD — How We Got the Logic
 
-**Example:** `10 → "1010"`
+### 🔍 **How do we break the problem?**
 
-**Process:**
+Euclid discovered:
+
+> GCD(a, b) = GCD(b, a % b)
+
+because remainder keeps reducing until it becomes 0.
+
+### 🧠 **Recursive logic idea**
+
+We reduce the problem size by replacing:
 
 ```
-10 ÷ 2 = 5 remainder 0
-5 ÷ 2 = 2 remainder 1
-2 ÷ 2 = 1 remainder 0
-1 ÷ 2 = 0 remainder 1
-
-Bottom-up → 1010
+(a, b) → (b, a % b)
 ```
 
-**Key Learning:** Mutiplt reminder into 10 and add digit recursively.
+### 🛑 **Base case**
+
+When second number becomes 0 → GCD found.
+
+### ✔ Final recursion
+
+```
+gcd(a, b) = gcd(b, a % b)
+base: b == 0
+```
 
 ---
 
-### 5️⃣ Factorial
+# 4️⃣ Decimal → Binary — How We Got the Logic
 
-**Example:** `5! = 120`
+### 🔍 **How do we break the problem?**
+
+Binary conversion is based on continuous division by 2.
+
+Each step gives:
+
+* Remainder → last binary digit
+* Quotient → smaller number to convert
+
+### 🧠 **Recursive logic idea**
+
+Binary of N =
+binary of (N / 2) + last digit (`N % 2`)
+
+### 🛑 **Base case**
+
+When the number becomes `0`, stop.
+
+### ✔ Final recursion
 
 ```
-5! = 5 × 4!
-     = 5 × 4 × 3!
-     = 5 × 4 × 3 × 2!
-     = 5 × 4 × 3 × 2 × 1
-     = 120
+binary(n) = binary(n/2) + (n % 2)
+base: n == 0
 ```
-
-**Key Learning:** Classic recursion pattern.
 
 ---
 
-### 6️⃣ Fibonacci 
+# 5️⃣ Factorial — How We Got the Logic
 
-**Sequence:** 0, 1, 1, 2, 3, 5...
+### 🔍 **How do we break the problem?**
 
-**1. Naive Recursive — O(2^n)**
+`n! = n × (n-1)!` → directly recursive in definition.
+
+### 🧠 **Recursive logic idea**
+
+Factorial naturally splits into a smaller factorial.
+
+### 🛑 **Base case**
+
+`1! = 1`
+And also `0! = 1`.
+
+So:
+
+```
+if n == 0 or n == 1 → return 1
+```
+
+### ✔ Final recursion
+
+```
+fact(n) = n * fact(n-1)
+base: n == 0 or 1
+```
+
+---
+
+# 6️⃣ Fibonacci — How We Got the Logic
+
+### 🔍 **How do we break the problem?**
+
+Fibonacci definition itself is:
 
 ```
 fib(n) = fib(n-1) + fib(n-2)
 ```
 
-**Key Learning:**  IT DOESNT INCLUDE 0 SO GIVES N + 1th ELEMENT.
+So recursion is direct.
+
+### 🧠 **Recursive logic idea**
+
+Every Fibonacci term depends on previous two terms.
+
+Smaller subproblems:
+
+* fib(n-1)
+* fib(n-2)
+
+### 🛑 **Base case**
+
+Sequence starts with:
+
+```
+fib(0) = 0
+fib(1) = 1
+```
+
+These don’t need recursion.
+
+### ✔ Final recursion
+
+```
+fib(n) = fib(n-1) + fib(n-2)
+base: n == 0 or 1
+```
 
 ---
 
