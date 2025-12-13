@@ -109,4 +109,37 @@ public class BinaryTree {
 
 	}
 
+	// Search in Binary Tree
+	public void search(String value) {
+
+		if (root == null) {
+			System.out.println("Empty tree.");
+			return;
+		}
+
+		Queue<BinaryNode> queue = new LinkedList<>();
+		queue.add(root);
+
+		while (!queue.isEmpty()) {
+
+			BinaryNode presentNode = queue.remove();
+
+			if (presentNode.value.equals(value)) {
+				System.out.println(value + " found in tree!");
+				return;
+			}
+
+			if (presentNode.left != null) {
+				queue.add(presentNode.left);
+			}
+
+			if (presentNode.right != null) {
+				queue.add(presentNode.right);
+			}
+
+		}
+
+		System.out.println(value + " not found in tree!");
+	}
+
 }
