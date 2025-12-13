@@ -82,4 +82,31 @@ public class BinaryTree {
 		preOrder(node.right);
 	}
 
+	// Level Order Traversal
+	public void levelOrder() {
+
+		if (root == null) {
+			System.out.println("Empty tree.");
+			return;
+		}
+
+		Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+		queue.add(root);
+
+		while (!queue.isEmpty()) {
+
+			BinaryNode present = queue.remove();
+			System.out.print(present.value + " ");
+
+			if (present.left != null) {
+				queue.add(present.left);
+			}
+
+			if (present.right != null) {
+				queue.add(present.right);
+			}
+		}
+
+	}
+
 }

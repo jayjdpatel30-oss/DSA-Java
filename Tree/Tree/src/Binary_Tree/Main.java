@@ -1,5 +1,8 @@
 package Binary_Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -25,7 +28,12 @@ public class Main {
 
 		System.out.print("\nPostOrder Traversal : ");
 		bt.postOrder(bt.root);
-
+		
+		System.out.print("\nLevelOrder Traversal : ");
+		bt.levelOrder();
 	}
+	
+	
+	
 
 }
