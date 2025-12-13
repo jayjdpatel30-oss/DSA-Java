@@ -13,6 +13,17 @@ Thumbs.db
 # Ignore Eclipse project files
 .project
 .classpath
+.settings/
+
+# Ignore compiled binaries
+bin/
+*.class
+
+# Other common Java ignores
+*.log
+*.jar
+*.war
+*.ear
 
 # Keep source code
 !src/
