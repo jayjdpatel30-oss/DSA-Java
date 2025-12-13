@@ -28,16 +28,21 @@ public class Main {
 
 		System.out.print("\nPostOrder Traversal : ");
 		bt.postOrder(bt.root);
-		
+
 		System.out.print("\nLevelOrder Traversal : ");
+		bt.levelOrder();
+
+		System.out.println();
+		// Search in tree
+		bt.search("N10");
+		bt.search("N3");
+
+		bt.delete("N5");
+		
 		bt.levelOrder();
 		
 		System.out.println();
-		//Search in tree
-		bt.search("N10");
-		bt.search("N3");
-		
+
 	}
-	
-	
+
 }
