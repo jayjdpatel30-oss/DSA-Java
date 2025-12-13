@@ -1,8 +1,19 @@
-# Eclipse project files
-.classpath
-.project
-.settings/
-
-# Compiled binaries
+# Ignore compiled output
 bin/
 *.class
+
+# Ignore Eclipse settings
+.settings/
+*.prefs
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Keep Eclipse project files
+!.project
+!.classpath
+
+# Keep source code
+!src/
+!src/**/*.java
