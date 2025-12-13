@@ -1,6 +1,28 @@
 # Ignore everything
 *
 
-# But keep src/ and all Java files inside
+# Keep source code
 !src/
 !src/**/*.java
+
+# Ignore Eclipse settings
+.settings/
+*.prefs
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Eclipse project files
+.project
+.classpath
+
+# Ignore compiled binaries
+bin/
+*.class
+
+# Other common Java ignores
+*.log
+*.jar
+*.war
+*.ear
