@@ -10,9 +10,9 @@ bin/
 .DS_Store
 Thumbs.db
 
-# Keep Eclipse project files
-!.project
-!.classpath
+# Ignore Eclipse project files
+.project
+.classpath
 
 # Keep source code
 !src/
