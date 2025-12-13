@@ -1,19 +1,6 @@
-# Ignore compiled output
-bin/
-*.class
+# Ignore everything
+*
 
-# Ignore Eclipse settings
-.settings/
-*.prefs
-
-# Ignore OS files
-.DS_Store
-Thumbs.db
-
-# Keep Eclipse project files
-!.project
-!.classpath
-
-# Keep source code
+# But keep src/ and all Java files inside
 !src/
 !src/**/*.java
