@@ -44,5 +44,18 @@ public class Tree {
 		System.out.print(nodes[index] + " ");
 		inOrder(index * 2 + 1);
 	}
+	
+	// Post Order Traversal
+		public void postOrder(int index) {
+
+			if (index > lastUsedIndex) {
+				return;
+			}
+
+			postOrder(index * 2);
+			postOrder(index * 2 + 1);
+			System.out.print(nodes[index] + " ");
+
+		}
 
 }
