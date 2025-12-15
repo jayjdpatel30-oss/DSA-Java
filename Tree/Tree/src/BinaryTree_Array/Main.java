@@ -23,6 +23,10 @@ public class Main {
 
 		System.out.println("\nPost Order Traversal : ");
 		tree.postOrder(1);
+		
+		System.out.println();
+		tree.search("N5");
+		
 	}
 
 }

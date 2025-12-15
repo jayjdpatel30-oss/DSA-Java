@@ -44,18 +44,31 @@ public class Tree {
 		System.out.print(nodes[index] + " ");
 		inOrder(index * 2 + 1);
 	}
-	
-	// Post Order Traversal
-		public void postOrder(int index) {
 
-			if (index > lastUsedIndex) {
+	// Post Order Traversal
+	public void postOrder(int index) {
+
+		if (index > lastUsedIndex) {
+			return;
+		}
+
+		postOrder(index * 2);
+		postOrder(index * 2 + 1);
+		System.out.print(nodes[index] + " ");
+
+	}
+
+	// Search Method in tree
+	public void search(String value) {
+
+		for (int i = 1; i < nodes.length; i++) {
+			if (nodes[i].equals(value)) {
+				System.out.println(value + " found in tree!");
 				return;
 			}
-
-			postOrder(index * 2);
-			postOrder(index * 2 + 1);
-			System.out.print(nodes[index] + " ");
-
 		}
+
+		System.out.println(value + " does not found in the tree!");
+	}
 
 }
