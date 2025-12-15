@@ -1,21 +1,21 @@
 # Ignore everything by default
 *
 
-# Keep only Tree folder and its Java files
+# Except Tree folder and its content
 !Tree/
-!Tree/**/*.java
+!Tree/**
 
-# Ignore Eclipse settings and metadata
+# Eclipse project files
 .settings/
 *.prefs
 .project
 .classpath
 
-# Ignore compiled binaries
+# Compiled binaries
 bin/
 *.class
 
-# Ignore OS-specific files
+# OS-specific files
 .DS_Store
 Thumbs.db
 
