@@ -33,4 +33,16 @@ public class Tree {
 		preOrder(index * 2 + 1);
 	}
 
+	// In Order Traversal
+	public void inOrder(int index) {
+
+		if (index > lastUsedIndex) {
+			return;
+		}
+
+		inOrder(index * 2);
+		System.out.print(nodes[index] + " ");
+		inOrder(index * 2 + 1);
+	}
+
 }

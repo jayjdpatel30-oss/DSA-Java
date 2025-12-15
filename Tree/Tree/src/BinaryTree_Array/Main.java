@@ -1,9 +1,9 @@
 package BinaryTree_Array;
 
 public class Main {
-	
+
 	public static void main(String[] args) {
-		
+
 		Tree tree = new Tree(9);
 		tree.insert("N1");
 		tree.insert("N2");
@@ -14,10 +14,13 @@ public class Main {
 		tree.insert("N7");
 		tree.insert("N8");
 		tree.insert("N9");
-		
-		System.out.println("Pre Order Traversal : " );
+
+		System.out.println("Pre Order Traversal : ");
 		tree.preOrder(1);
-		
+
+		System.out.println("\nIn Order Traversal : ");
+		tree.inOrder(1);
+
 	}
 
 }
