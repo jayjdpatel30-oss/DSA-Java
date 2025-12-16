@@ -20,19 +20,19 @@ public class Main {
 
 		System.out.println("Root : " + bt.root.value);
 
-		//InOrder Traversal - Recursive
+		// InOrder Traversal - Recursive
 		System.out.print("InOrder Traversal : ");
 		bt.inOrder(bt.root);
 
-		//PreOrder Traversal - Recursive
+		// PreOrder Traversal - Recursive
 		System.out.print("\nPreOrder Traversal : ");
 		bt.preOrder(bt.root);
 
-		//PostOrder Traversal - Recursive
+		// PostOrder Traversal - Recursive
 		System.out.print("\nPostOrder Traversal : ");
 		bt.postOrder(bt.root);
 
-		//LevelOrder Traversal - Recursive
+		// LevelOrder Traversal - Recursive
 		System.out.print("\nLevelOrder Traversal : ");
 		bt.levelOrder();
 
@@ -45,13 +45,16 @@ public class Main {
 //		
 //		System.out.print("\nLevelOrder Traversal : ");
 //		bt.levelOrder();
-		
+
 		System.out.println();
-		
-		//InOrder Traversal - Iterative
+
+		// InOrder Traversal - Iterative
 		System.out.print("InOrder Traversal : ");
 		bt.inOrder(bt.root);
 
+		// PreOrder Traversal - Recursive
+		System.out.print("\nPreOrder Traversal : ");
+		bt.preOrderIte(bt.root);
 
 	}
 

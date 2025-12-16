@@ -253,7 +253,7 @@ public class BinaryTree {
 			return;
 		}
 
-		Stack<BinaryNode> stack = new Stack<String>();
+		Stack<BinaryNode> stack = new Stack<BinaryNode>();
 
 		BinaryNode current = root;
 
@@ -265,6 +265,32 @@ public class BinaryTree {
 			}
 			System.out.print(current.value + " ");
 			current = current.right;
+
+		}
+	}
+
+	// PreOrder Iterative Using Stack
+	public void preOrderIte(BinaryNode root) {
+
+		if (root == null) {
+			return;
+		}
+
+		Stack<BinaryNode> stack = new Stack<BinaryNode>();
+		stack.push(root);
+
+		while (!stack.isEmpty()) {
+
+			BinaryNode current = stack.pop();
+			System.out.print(current.value + " ");
+
+			if (current.right != null) {
+				stack.push(current.right);
+			}
+
+			if (current.left != null) {
+				stack.push(current.left);
+			}
 
 		}
 
