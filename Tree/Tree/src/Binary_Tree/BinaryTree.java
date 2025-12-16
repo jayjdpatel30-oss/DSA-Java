@@ -293,7 +293,39 @@ public class BinaryTree {
 			}
 
 		}
+	}
 
+	// PostOrder Iterative Using Stack
+	public void postOrderIte(BinaryNode root) {
+
+		if (root == null) {
+			return;
+		}
+
+		Stack<BinaryNode> stack1 = new Stack<BinaryNode>();
+		Stack<BinaryNode> stack2 = new Stack<BinaryNode>();
+
+		stack1.push(root);
+
+		while (!stack1.isEmpty()) {
+
+			BinaryNode current = stack1.pop();
+
+			stack2.push(current);
+
+			if (current.left != null) {
+				stack1.push(current.left);
+			}
+
+			if (current.right != null) {
+				stack1.push(current.right);
+			}
+		}
+
+		// all nodes stored in reverse post order manner in satck2
+		while (!stack2.isEmpty()) {
+			System.out.print(stack2.pop().value + " ");
+		}
 	}
 
 }

@@ -52,10 +52,13 @@ public class Main {
 		System.out.print("InOrder Traversal : ");
 		bt.inOrder(bt.root);
 
-		// PreOrder Traversal - Recursive
+		// PreOrder Traversal - Iterative
 		System.out.print("\nPreOrder Traversal : ");
 		bt.preOrderIte(bt.root);
 
+		// PostOrder Traversal - Iterative
+		System.out.print("\nPostOrder Traversal : ");
+		bt.postOrderIte(bt.root);
 	}
 
 }
