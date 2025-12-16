@@ -71,4 +71,33 @@ public class Tree {
 		System.out.println(value + " does not found in the tree!");
 	}
 
+	// delete method in tree
+	public void delete(String value) {
+
+		if (lastUsedIndex == 0) {
+			System.out.println("Empty tree!");
+			return;
+		}
+
+		if (lastUsedIndex == 1 && nodes[1].equals(value)) {
+			lastUsedIndex--;
+			System.out.println(value + " deleted!");
+			return;
+		}
+
+		for (int i = 1; i < nodes.length; i++) {
+
+			if (nodes[i].equals(value)) {
+
+				nodes[i] = nodes[lastUsedIndex];
+				lastUsedIndex--;
+				System.out.println(value + " deleted!");
+				return;
+			}
+
+		}
+
+		System.out.println(value + " does not found in tree so cannot be deleted!");
+	}
+
 }
