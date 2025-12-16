@@ -33,8 +33,8 @@ public class Main {
 		System.out.println("\nIn Order Traversal : ");
 		tree.inOrder(1);
 
-//		feat: Add Deletion method in tree!
-//		we find node to be deleted then change value of that node to deepest node and decrement index by 1 so deepest node is getting deleted.
+		
+		
 	}
 
 }

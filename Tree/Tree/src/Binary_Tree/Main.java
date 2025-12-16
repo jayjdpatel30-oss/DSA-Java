@@ -20,15 +20,19 @@ public class Main {
 
 		System.out.println("Root : " + bt.root.value);
 
+		//InOrder Traversal - Recursive
 		System.out.print("InOrder Traversal : ");
 		bt.inOrder(bt.root);
 
+		//PreOrder Traversal - Recursive
 		System.out.print("\nPreOrder Traversal : ");
 		bt.preOrder(bt.root);
 
+		//PostOrder Traversal - Recursive
 		System.out.print("\nPostOrder Traversal : ");
 		bt.postOrder(bt.root);
 
+		//LevelOrder Traversal - Recursive
 		System.out.print("\nLevelOrder Traversal : ");
 		bt.levelOrder();
 
@@ -37,11 +41,17 @@ public class Main {
 		bt.search("N10");
 		bt.search("N3");
 
-		bt.delete("N5");
-		
-		bt.levelOrder();
+//		bt.delete("N5");
+//		
+//		System.out.print("\nLevelOrder Traversal : ");
+//		bt.levelOrder();
 		
 		System.out.println();
+		
+		//InOrder Traversal - Iterative
+		System.out.print("InOrder Traversal : ");
+		bt.inOrder(bt.root);
+
 
 	}
 

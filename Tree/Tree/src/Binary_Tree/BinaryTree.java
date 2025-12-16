@@ -2,6 +2,7 @@ package Binary_Tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 //Binary Tree using Queue (Linked list)
 public class BinaryTree {
@@ -207,7 +208,7 @@ public class BinaryTree {
 			}
 
 		}
-		
+
 		return present;
 	}
 
@@ -240,6 +241,30 @@ public class BinaryTree {
 					queue.add(present.left);
 				}
 			}
+
+		}
+
+	}
+
+	// InOrder Iterative Using Stack
+	public void inOrderIte(BinaryNode root) {
+
+		if (root == null) {
+			return;
+		}
+
+		Stack<BinaryNode> stack = new Stack<String>();
+
+		BinaryNode current = root;
+
+		while (!stack.isEmpty() && current != null) {
+
+			while (current != null) {
+				stack.push(current);
+				current = current.left;
+			}
+			System.out.print(current.value + " ");
+			current = current.right;
 
 		}
 
