@@ -29,4 +29,16 @@ public class BinarySearchTree {
 		root = insertHelper(root, val);
 	}
 
+	// InOrder Traversal
+	public void inOrder(BinaryNode node) {
+
+		if (node == null) {
+			return;
+		}
+
+		inOrder(node.left);
+		System.out.print(node.val + " ");
+		inOrder(node.right);
+	}
+
 }
