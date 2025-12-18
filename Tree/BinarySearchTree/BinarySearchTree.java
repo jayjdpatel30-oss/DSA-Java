@@ -65,4 +65,31 @@ public class BinarySearchTree {
 		System.out.print(node.val + " ");
 	}
 
+	// LevelOrder Traversal
+	public void levelOrder() {
+
+		if (root == null) {
+			System.out.println("Empty Tree!");
+			return;
+		}
+
+		Queue<BinaryNode> queue = new LinkedList<>();
+		queue.add(root);
+
+		while (!queue.isEmpty()) {
+
+			BinaryNode currentNode = queue.remove();
+			System.out.print(currentNode.val + " ");
+
+			if (currentNode.left != null) {
+				queue.add(currentNode.left);
+			}
+
+			if (currentNode.right != null) {
+				queue.add(currentNode.right);
+			}
+
+		}
+	}
+
 }
