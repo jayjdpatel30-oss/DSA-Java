@@ -111,4 +111,47 @@ public class BinarySearchTree {
 		}
 	}
 
+	// Delete Node in BST
+	public BinaryNode delete(BinaryNode node, int val) {
+
+		if (node == null) {
+			System.out.println("Value Not present in tree!");
+			return node;
+		} else if (val < node.val) {
+			node.left = delete(node.left, val);
+		} else if (val > node.val) {
+			node.right = delete(node.right, val);
+		} else {
+
+			// No children
+			if (node.left == null && node.right == null) {
+				return null;
+			} else if (node.right == null) { // One Children
+				return node.left;
+			} else if (node.left == null) { // One Children
+				return node.right;
+			} else { // Two Children
+
+				BinaryNode succesor = minRight(node.right);
+				node.val = succesor.val;
+				node.right = delete(node.right, succesor.val);
+
+			}
+
+		}
+		
+		return node;
+	}
+
+	// Helper method to find minimum value node
+	public BinaryNode minRight(BinaryNode node) {
+
+		if (node.left == null) {
+			return node;
+		}
+
+		return minRight(node.left);
+
+	}
+
 }
