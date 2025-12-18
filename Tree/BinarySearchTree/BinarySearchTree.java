@@ -92,4 +92,23 @@ public class BinarySearchTree {
 		}
 	}
 
+	// Search in Binary Search Tree
+	public BinaryNode search(BinaryNode node, int val) {
+
+		if (node == null) {
+			System.out.println(val + " does not found in binary Search tree!");
+			return null;
+		}
+
+		if (val == node.val) {
+			System.out.println(val + " found in binary Search tree!");
+			return node;
+		} else if (val < node.val) {
+			return search(node.left, val);
+		} else {
+			return search(node.right, val);
+
+		}
+	}
+
 }
