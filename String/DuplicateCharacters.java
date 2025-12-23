@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class DuplicateCharacters {
 
 	// ========================================================================
-	// PROBLEM 3: Find Duplicate Characters
+	// PROBLEM 7: Find Duplicate Characters
 	// ========================================================================
 	/**
 	 * Problem Statement: Print duplicate characters from a string.
@@ -75,3 +75,4 @@ public class DuplicateCharacters {
 	}
 
 }
+
