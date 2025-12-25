@@ -1,0 +1,76 @@
+package Problems;
+
+import java.util.Arrays;
+
+public class P014_rotate_array_by_1 {
+
+	// ========================================================================
+	// PROBLEM 14: Rotate Array By One
+	// ========================================================================
+	/*
+	 * Given an integer array, rotate the array to the right by one position.
+	 *
+	 * Example:
+	 * Input  : [1, 2, 3, 4]
+	 * Output : [4, 1, 2, 3]
+	 *
+	 * Time Complexity:
+	 * O(n)
+	 *
+	 * Space Complexity:
+	 * O(1)
+	 */
+
+	public static void main(String[] args) {
+
+		int[] nums = { 1, 2, 3, 4, 5 };
+		int[] nums1 = nums.clone();
+		int k = 3;
+
+		rotate(nums);
+		System.out.println("Roatated Array : " + Arrays.toString(nums));
+
+		rotateByK(nums1, k);
+		System.out.println("Roatated Array : " + Arrays.toString(nums1));
+	}
+
+	private static void rotate(int[] nums) {
+
+		if (nums.length <= 1) {
+			return;
+		}
+
+		int last = nums[nums.length - 1];
+
+		for (int i = nums.length - 1; i > 0; i--) {
+			nums[i] = nums[i - 1];
+		}
+
+		nums[0] = last;
+	}
+
+	private static void rotateByK(int[] nums, int k) {
+
+		if (nums.length <= 1 || k == nums.length - 1) {
+			return;
+		}
+
+		rotateHelper(nums, 0, nums.length - 1);
+		rotateHelper(nums, 0, k - 1);
+		rotateHelper(nums, k, nums.length - 1);
+	}
+
+	private static void rotateHelper(int[] nums, int start, int end) {
+
+		while (start < end) {
+
+			int temp = nums[start];
+			nums[start] = nums[end];
+			nums[end] = temp;
+
+			start++;
+			end--;
+		}
+	}
+
+}
