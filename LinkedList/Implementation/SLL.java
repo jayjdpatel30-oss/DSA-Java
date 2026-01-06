@@ -10,6 +10,7 @@ public class SLL {
 		System.out.println(val + " inserted!");
 	}
 
+	// Insert Node in Linked List
 	void insertNode(int val) {
 
 		ListNode newNode = new ListNode(val);
@@ -26,6 +27,7 @@ public class SLL {
 		size++;
 	}
 
+	// Print Method 
 	void printList() {
 		
 		if(head == null) {
@@ -43,7 +45,30 @@ public class SLL {
 			
 			curr = curr.next;
 		}
+
+		System.out.println();
+	}
+
+	// search in Linked List
+	void search(int val) {
+
+		if (head == null) {
+			System.out.println("Empty list!");
+			return;
+		}
+
+		ListNode curr = head;
+
+		while (curr != null) {
+
+			if (curr.val == val) {
+				System.out.println(val + " present in linked list!");
+				return;
+			}
+			curr = curr.next;
+		}
 		
+		System.out.println(val + " not present in linked list!");
 	}
 
 }
