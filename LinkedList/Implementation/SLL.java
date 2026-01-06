@@ -26,4 +26,24 @@ public class SLL {
 		size++;
 	}
 
+	void printList() {
+		
+		if(head == null) {
+			System.out.println("Empty list!");
+			return;
+		}
+		
+		ListNode curr = head;
+		
+		while(curr != null) {
+			System.out.print(curr.val);
+			if(curr.next != null) {
+				System.out.print(" -> ");
+			}
+			
+			curr = curr.next;
+		}
+		
+	}
+
 }
