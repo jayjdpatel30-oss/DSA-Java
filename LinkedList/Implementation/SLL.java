@@ -71,4 +71,42 @@ public class SLL {
 		System.out.println(val + " not present in linked list!");
 	}
 
+	// delete node in linked list
+	void delete(int index) {
+
+		if (head == null) {
+			System.out.println("Empty list!");
+			return;
+		}
+
+		if (index < 0 || index >= size) {
+			System.out.println("Invalid Index.");
+			return;
+		}
+
+		if (index == 0) {
+
+			head = head.next;
+	        if (head == null) {
+	            tail = null; 
+	        }
+	        size--;
+	        return;
+		}
+
+		ListNode curr = head;
+
+		for (int i = 0; i < index - 1; i++) {
+			curr = curr.next;
+		}
+
+		curr.next = curr.next.next;
+
+		if (index == size - 1) {
+			tail = curr;
+		}
+
+		size--;
+	}
+
 }
