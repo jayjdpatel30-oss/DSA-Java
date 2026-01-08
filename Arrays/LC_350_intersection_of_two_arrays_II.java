@@ -5,7 +5,7 @@ import java.util.*;
 public class LC_350_intersection_of_two_arrays_II {
 	
 	// ========================================================================
-    // PROBLEM 4: LC 350 - Intersection of Two Arrays II
+    // LeetCode 350 - Intersection of Two Arrays II
     // ========================================================================
     /**
      * Problem Statement:
