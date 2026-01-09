@@ -47,6 +47,7 @@ public class LC_007_reverse_integer {
 		
 		int x = -123;
 		System.out.println(reverse(x));		
+		System.out.println(rev(120));		
 	}
 	
 	private static int reverse(int x) {
@@ -74,7 +75,32 @@ public class LC_007_reverse_integer {
 		return result;
 	}
 
+	private static int rev(int x) {
+
+		int result = 0;
+
+		while (x != 0) {
+
+			int digit = x % 10;
+
+			if (result > Integer.MAX_VALUE / 10
+					|| (result == Integer.MAX_VALUE / 10) && digit == Integer.MAX_VALUE % 10) {
+				return 0;
+			}
+
+			if (result < Integer.MIN_VALUE / 10
+					|| (result == Integer.MIN_VALUE / 10 && digit == Integer.MIN_VALUE % 10)) {
+				return 0;
+			}
+
+			result = result * 10 + digit;
+		}
+
+		return result;
+	}
+
 }
 
 // Output : 
 // -321
+// 21
