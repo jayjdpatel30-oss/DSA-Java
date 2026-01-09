@@ -94,6 +94,7 @@ public class LC_007_reverse_integer {
 			}
 
 			result = result * 10 + digit;
+			x /= 10;
 		}
 
 		return result;
