@@ -2,7 +2,7 @@ package String;
 
 public class LC008_string_to_integer {
 	
-	  // ========================================================================
+	// ========================================================================
     // LeetCode 8: String to Integer (atoi)
     // ========================================================================
     /**
@@ -41,11 +41,14 @@ public class LC008_string_to_integer {
      * Constraints:
      * - 0 <= s.length <= 200
      * - s consists of English letters, digits, ' ', '+', '-', and '.'
+     *
+	 * Time Complexity: O(n)
+     * Space Complexity: O(1)
      */
 	
 	public static void main(String[] args) {
 		
-		String s = "-4+-as2";
+		String s = "4193 with words";
 		System.out.println(intVal(s));
 	}
 	
@@ -98,3 +101,6 @@ public class LC008_string_to_integer {
 	}
 
 }
+
+// Output : 
+// 4193
