@@ -39,7 +39,7 @@ public class MajorityElement {
 		HashMap<Integer, Integer> freqCount = new HashMap<>();
 
 		for (int num : nums) {
-			freqCount.put(num, freqCount.getOrDefault(nums, 0) + 1);
+			freqCount.put(num, freqCount.getOrDefault(num, 0) + 1);
 		}
 
 		// for being majority it should be appear more than half of times.
@@ -79,3 +79,4 @@ public class MajorityElement {
 	}
 
 }
+
