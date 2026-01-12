@@ -437,4 +437,164 @@ n = 2
 
 ---
 
+### ✅ 5. Contains Duplicate II (LeetCode 219)
+
+#### 📌 Problem Name
+**Contains Duplicate II**  
+**LeetCode ID:** 219
+
+#### 📝 Problem Statement
+Given an integer array `nums` and an integer `k`, return `true` if there are two distinct indices `i` and `j` in the array such that `nums[i] == nums[j]` and `abs(i - j) <= k`.
+
+#### 🧠 Concepts & Data Structures Used
+- HashSet (sliding window)
+- Sliding Window technique
+- Duplicate detection with distance constraint
+- Array traversal
+
+#### 💡 Approach: Sliding Window with HashSet
+
+**🔍 Idea**  
+Maintain a sliding window of size `k` using a HashSet. Check if any duplicate exists within this window as we traverse the array.
+
+**🧠 Logic (Step-by-Step)**
+1. Create a `HashSet<Integer>` to represent the sliding window
+2. Iterate through the array:
+   - **Check:** If current element exists in the window → return `true` (duplicate found within distance k)
+   - **Add:** Current element to the window
+   - **Maintain window size:** If window size exceeds `k`, remove the element that's now outside the window (`nums[i - k]`)
+3. If no duplicates found → return `false`
+
+**🪟 Sliding Window Mechanism**
+```
+Window contains at most k elements at any time
+When window size > k, remove leftmost element
+This ensures all elements in window are within distance k
+```
+
+**⏱️ Complexity**
+- **Time:** `O(n)` - single pass through array
+- **Space:** `O(min(n, k))` - HashSet stores at most k+1 elements
+
+#### 🧪 Example Walkthrough
+
+**Example 1:**
+
+**Input:**
+```
+nums = [1,2,3,1], k = 3
+```
+
+**Processing:**
+```
+i=0: window={1}                    | size=1, no duplicate
+i=1: window={1,2}                  | size=2, no duplicate
+i=2: window={1,2,3}                | size=3, no duplicate
+i=3: window={1,2,3} contains 1?    | YES! → return true
+```
+
+**Output:**
+```
+true
+```
+
+**Example 2:**
+
+**Input:**
+```
+nums = [1,0,1,1], k = 1
+```
+
+**Processing:**
+```
+i=0: window={1}                    | size=1, no duplicate
+i=1: window={1,0}                  | size=2 > k, remove nums[0]=1
+     window={0}                    | no duplicate
+i=2: window={0,1}                  | size=2 > k, remove nums[1]=0
+     window={1}                    | no duplicate
+i=3: window={1} contains 1?        | YES! → return true
+```
+
+**Output:**
+```
+true
+```
+
+**Example 3:**
+
+**Input:**
+```
+nums = [1,2,3,1,2,3], k = 2
+```
+
+**Processing:**
+```
+i=0: window={1}                    | size=1, no duplicate
+i=1: window={1,2}                  | size=2, no duplicate
+i=2: window={1,2,3}                | size=3 > k, remove nums[0]=1
+     window={2,3}                  | no duplicate
+i=3: window={2,3,1}                | size=3 > k, remove nums[1]=2
+     window={3,1}                  | no duplicate
+i=4: window={3,1,2}                | size=3 > k, remove nums[2]=3
+     window={1,2}                  | no duplicate
+i=5: window={1,2,3}                | size=3 > k, remove nums[3]=1
+     window={2,3}                  | no duplicate
+```
+
+**Output:**
+```
+false
+```
+
+#### ⚠️ Edge Cases Covered
+- Empty array or single element → return `false`
+- k = 0 → no duplicates possible within distance 0
+- k >= array length → check entire array for duplicates
+- All elements unique → return `false`
+- All elements same → return `true` (if k > 0)
+
+#### 🎯 Why Sliding Window Is Optimal
+
+**Key Advantages:**
+- **O(n) time** - single pass through array
+- **O(k) space** - window size bounded by k
+- **Efficient checking** - O(1) HashSet operations
+- **Maintains distance constraint** automatically
+
+**Alternative Approaches:**
+
+| Approach | Time | Space | Notes |
+|----------|------|-------|-------|
+| Brute Force (nested loops) | O(n·k) | O(1) | Check each element with next k elements |
+| HashMap with indices | O(n) | O(n) | Store last seen index, more space |
+| Sliding Window + HashSet | O(n) | O(k) | ⭐ BEST - optimal space |
+
+#### 📊 Algorithm Visualization
+
+```
+nums = [1, 2, 3, 1], k = 3
+
+Step 1: i=0, window={1}
+        [1, 2, 3, 1]
+         ↑
+
+Step 2: i=1, window={1,2}
+        [1, 2, 3, 1]
+            ↑
+
+Step 3: i=2, window={1,2,3}
+        [1, 2, 3, 1]
+               ↑
+
+Step 4: i=3, window={1,2,3}, checking 1
+        [1, 2, 3, 1]
+         ↑        ↑
+         Found! distance = 3 ≤ k ✓
+```
+
+#### 📂 Java File
+`ContainsDuplicateII.java`
+
+---
+
 ---
