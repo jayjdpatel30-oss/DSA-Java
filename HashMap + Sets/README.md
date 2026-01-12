@@ -1,0 +1,123 @@
+HashMap + Sets (Java)
+
+This folder contains Data Structures & Algorithms problems solved using HashMap and HashSet in Java.
+All problems are implemented with optimized approaches, focusing on time and space efficiency.
+
+🧠 Concepts & Logic Covered
+
+HashMap for frequency counting
+
+HashSet for duplicate detection
+
+Sliding Window technique
+
+Cycle detection using sets
+
+Intersection of sets
+
+Constant-time lookups (O(1) average)
+
+ * ## Problems Covered
+ * 
+ * | # | Problem | Difficulty | Key Concept | Time | Space |
+ * |---|---------|-----------|-------------|------|-------|
+ * | 1 | Intersection of Two Arrays | Easy | HashSet | O(n+m) | O(n) |
+ * | 2 | Majority Element | Easy | HashMap/Boyer-Moore | O(n) | O(n)/O(1) |
+ * | 3 | Single Number | Easy | XOR Bit Manipulation | O(n) | O(1) |
+ * | 4 | Happy Number | Easy | HashSet/Cycle Detection | O(log n) | O(log n) |
+ * | 5 | Contains Duplicate II | Easy | HashMap/Sliding Window | O(n) | O(k) |
+
+
+🧩 Problem Explanations
+✅ 1.  Intersection of Two Arrays (LeetCode 349)
+
+Problem Statement
+
+Given two integer arrays nums1 and nums2, return an array containing their intersection.
+Each element in the result must be unique, and the result can be returned in any order.
+
+🧠 Data Structures Used
+
+HashSet<Integer>
+
+To store unique elements
+
+To perform constant-time lookups
+
+💡 Approach
+
+Store all unique elements of nums1 in a HashSet
+
+Traverse nums2 and check if elements exist in the first set
+
+Use another HashSet to store intersection elements (ensures uniqueness)
+
+Convert the result set into an array
+
+🔍 Logic Explanation (Step-by-Step)
+
+Insert all elements of nums1 into a HashSet
+→ removes duplicates automatically
+
+Traverse nums2
+
+If an element exists in nums1 set
+
+Add it to the intersection set
+
+Convert the intersection set into an integer array
+
+🧪 Example Walkthrough
+
+Input
+
+nums1 = [4, 9, 5]
+nums2 = [9, 4, 9, 8, 4]
+
+
+Processing
+
+Unique elements from nums1 → {4, 9, 5}
+
+Matching elements in nums2 → {9, 4}
+
+Output
+
+[9, 4]  (order may vary)
+
+⏱️ Time Complexity
+
+Building first HashSet → O(n)
+
+Checking second array → O(m)
+
+Total: O(n + m)
+
+🧮 Space Complexity
+
+HashSet for nums1 → O(n)
+
+HashSet for intersection → O(min(n, m))
+
+Total: O(n)
+
+⚠️ Edge Cases Handled
+
+Duplicate elements in input arrays
+
+No common elements → returns empty array
+
+Order of output not required
+
+Works for unsorted arrays
+
+🎯 Why This Approach Is Optimal
+
+HashSet provides O(1) average lookup time
+
+Avoids nested loops (O(n × m))
+
+Automatically handles uniqueness
+
+📂 Java File
+IntersectionArrays.java
